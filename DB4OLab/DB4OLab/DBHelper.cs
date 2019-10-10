@@ -10,45 +10,48 @@ namespace DB4OLab
     public class DBHelper
     {
         public static string DBName { get; set; }
-        private static IObjectContainer Database = null;
-        
+        private static IObjectContainer _database = null;
+        public static IObjectContainer Database
+        {
+            get { return _database; }
+        }
         public static void OpenDatabase(string file = "DB4Odata.k43")
         {
             DBName = file;
-            Database = Db4oEmbedded.OpenFile(file);
+            _database = Db4oEmbedded.OpenFile(file);
         }
 
         public static void CloseDatabase()
         {
-            Database.Close();
+            _database.Close();
         }
 
         public static void InsertObject<T>(T data)
         {
             OpenDatabase();
-            Database.Store(data);
+            _database.Store(data);
             CloseDatabase();
         }
 
         public static void UpdateObject<T>(T template, T data)
         {
             OpenDatabase();
-            IObjectSet result = Database.QueryByExample(template);
+            IObjectSet result = _database.QueryByExample(template);
             //get first
             T obj = (T) result[0];
             //update for data
             
-            Database.Store(obj);
+            _database.Store(obj);
             CloseDatabase();
         }
 
         public static void DeleteObject<T>(T template)
         {
             OpenDatabase();
-            IObjectSet result = Database.QueryByExample(template);
+            IObjectSet result = _database.QueryByExample(template);
             //get first
             T obj = (T)result[0];
-            Database.Delete(obj);
+            _database.Delete(obj);
             CloseDatabase();
         }
 
@@ -56,7 +59,7 @@ namespace DB4OLab
         {
             OpenDatabase();
             List<T> result = new List<T>();
-            IObjectSet results = Database.QueryByExample(template);
+            IObjectSet results = _database.QueryByExample(template);
             for (int i = 0; i < results.Count; i++)
             {
                 result.Add((T)results[i]);
