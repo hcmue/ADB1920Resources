@@ -36,6 +36,10 @@
     <Reference Include="Db4objects.Db4o">
       <HintPath>..\..\..\..\Downloads\net-4.0\Db4objects.Db4o.dll</HintPath>
     </Reference>
+    <Reference Include="Db4objects.Db4o.Instrumentation, Version=8.0.276.16149, Culture=neutral, PublicKeyToken=6199cd4f203aa8eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\net-4.0\Db4objects.Db4o.Instrumentation.dll</HintPath>
+    </Reference>
     <Reference Include="Db4objects.Db4o.Linq">
       <HintPath>..\..\..\..\Downloads\net-4.0\Db4objects.Db4o.Linq.dll</HintPath>
     </Reference>

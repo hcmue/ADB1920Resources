@@ -59,5 +59,17 @@ namespace DB4OLab
             DBHelper.CloseDatabase();
             dataGridView1.DataSource = students;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //sử dụng LINQ tìm
+            DBHelper.OpenDatabase();
+
+            IEnumerable<Student> data = (from Student sv in DBHelper.Database
+                        where sv.FullName.ToLower().Contains(txtHoTen.Text.ToLower()) && sv.RegisterYear == 2016
+                        select sv);
+
+            DBHelper.CloseDatabase();
+        }
     }
 }
