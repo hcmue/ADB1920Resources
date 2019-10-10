@@ -1,4 +1,5 @@
 ﻿using Db4objects.Db4o;
+using Db4objects.Db4o.Config;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,9 +39,9 @@ namespace DB4OLab
             OpenDatabase();
             IObjectSet result = _database.QueryByExample(template);
             //get first
-            T obj = (T) result[0];
+            T obj = (T)result[0];
             //update for data
-            
+
             _database.Store(obj);
             CloseDatabase();
         }
@@ -67,6 +68,6 @@ namespace DB4OLab
 
             CloseDatabase();
             return result;
-        }        
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Db4objects.Db4o;
-using System;
+using Db4objects.Db4o.Linq;using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace DB4OLab
 {
@@ -65,11 +66,15 @@ namespace DB4OLab
             //sử dụng LINQ tìm
             DBHelper.OpenDatabase();
 
-            IEnumerable<Student> data = (from Student sv in DBHelper.Database
-                        where sv.FullName.ToLower().Contains(txtHoTen.Text.ToLower()) && sv.RegisterYear == 2016
-                        select sv);
+            IEnumerable<Student> students = (from Student sv in DBHelper.Database
+             where sv.FullName.ToLower().Contains(txtHoTen.Text.ToLower()) && sv.RegisterYear == 2016
+            select sv).ToList();
 
             DBHelper.CloseDatabase();
+
+            dataGridView1.DataSource = students;
         }
     }
+
+
 }
