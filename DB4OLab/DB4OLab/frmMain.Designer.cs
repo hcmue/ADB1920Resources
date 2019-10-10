@@ -74,7 +74,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(79, 80);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(160, 20);
-            this.txtHoTen.TabIndex = 2;
+            this.txtHoTen.TabIndex = 3;
             // 
             // label3
             // 
@@ -90,7 +90,7 @@
             this.txtDiem.Location = new System.Drawing.Point(79, 125);
             this.txtDiem.Name = "txtDiem";
             this.txtDiem.Size = new System.Drawing.Size(160, 20);
-            this.txtDiem.TabIndex = 2;
+            this.txtDiem.TabIndex = 4;
             // 
             // label4
             // 
@@ -106,7 +106,7 @@
             this.txtNamNhapHoc.Location = new System.Drawing.Point(380, 38);
             this.txtNamNhapHoc.Name = "txtNamNhapHoc";
             this.txtNamNhapHoc.Size = new System.Drawing.Size(160, 20);
-            this.txtNamNhapHoc.TabIndex = 2;
+            this.txtNamNhapHoc.TabIndex = 5;
             // 
             // label5
             // 
@@ -124,14 +124,14 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(406, 75);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgaySinh.TabIndex = 3;
+            this.dtpNgaySinh.TabIndex = 6;
             // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(56, 181);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(104, 45);
-            this.btnThem.TabIndex = 4;
+            this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -149,9 +149,10 @@
             this.button1.Location = new System.Drawing.Point(180, 181);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 45);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Tìm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMain
             // 

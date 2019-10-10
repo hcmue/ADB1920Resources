@@ -36,13 +36,28 @@ namespace DB4OLab
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            DBHelper.OpenDatabase();
-            Database = DBHelper.Database;
+            //DBHelper.OpenDatabase();
+            //Database = DBHelper.Database;
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //DBHelper.CloseDatabase();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Tìm SV có tên chứa chữ A - txtHoTen và nhập học năm 2016
+            DBHelper.OpenDatabase();
+            IList<Student> students = DBHelper.Database.Query(delegate (Student sv)
+            {
+                if (sv.FullName.ToLower().Contains(txtHoTen.Text.ToLower()) && sv.RegisterYear == 2016)
+                    return true;
+
+                return false;
+            }).ToList();
             DBHelper.CloseDatabase();
+            dataGridView1.DataSource = students;
         }
     }
 }
